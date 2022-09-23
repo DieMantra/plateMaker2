@@ -1,0 +1,89 @@
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fadeOut {
+	0% {
+		opacity: initial;
+	}
+	100% {
+		opacity: 0;
+		display: none;
+	}
+}
+
+.show {
+	display: flex;
+	animation: fadeIn forwards 0.5s cubic-bezier(0.37, 0, 0, 1.01);
+}
+.hidden {
+	animation: fadeOut forwards 0.5s cubic-bezier(0.37, 0, 0, 1.01);
+	display: none;
+
+	&--instant {
+		display: none;
+	}
+}
+@keyframes slideOutRight {
+	100% {
+		transform: translateX(0%);
+	}
+}
+@keyframes slideOutLeft {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(300%);
+	}
+}
+
+@keyframes rippleClick {
+	0% {
+		opacity: 1;
+		height: 0px;
+		width: 0px;
+	}
+	100% {
+		opacity: 0;
+		height: 500%;
+		width: 500%;
+	}
+}
+
+.slide-out--right {
+	animation: slideOutRight forwards 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+.slide-out--left {
+	animation: slideOutLeft forwards 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+.click_clr {
+	position: relative;
+	overflow: hidden;
+}
+
+.ripples {
+	position: absolute;
+	background-color: white;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	border-radius: 50%;
+	animation: rippleClick 0.5s linear;
+}
+
+@keyframes animateMenuForwards {
+	0% {
+	}
+	100% {
+	}
+}
+
+.animateMenu {
+	animation: animateMenu 0.5s forwards cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

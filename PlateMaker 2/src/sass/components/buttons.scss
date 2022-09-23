@@ -1,0 +1,76 @@
+.btn {
+	text-transform: uppercase;
+	text-decoration: underline;
+	font-size: 1.6rem;
+	color: var(--text-color-primary);
+	border-style: none;
+	background-color: var(--bg-color-mid);
+	padding: 1rem;
+
+	box-shadow: var(--drop-shadow-sm);
+
+	border-radius: 3px;
+	transition: 0.2s;
+
+	&__reset {
+		aspect-ratio: 1/1;
+	}
+	&:hover {
+		background-color: var(--text-color-secondary);
+		color: var(--text-color-primary);
+		transform: translateY(-2px);
+		cursor: pointer;
+		box-shadow: var(--drop-shadow-sm-1);
+	}
+	&:active {
+		transform: translateY(3px);
+		box-shadow: var(--drop-shadow-sm-2);
+	}
+}
+
+// On / Off Apple Style Switchs
+.on-off__sw {
+	position: relative;
+	width: 5.6rem;
+	height: 3rem;
+	margin-right: 1rem;
+	padding-right: 5.6rem;
+	padding-bottom: 3rem;
+
+	&--btn {
+		display: none;
+		&:checked ~ .on-off__sw--span::after {
+			left: calc(100% - 2px - 2.6rem);
+		}
+		&:checked ~ .on-off__sw--span::before {
+			background-color: var(--bg-color-on);
+		}
+	}
+
+	&--span {
+		&::before {
+			content: '';
+			width: 5.6rem;
+			height: 3rem;
+			border-radius: 5rem;
+			background-color: var(--bg-color-mid);
+			position: absolute;
+			top: 0;
+			left: 0;
+			box-shadow: var(--drop-shadow-sm);
+		}
+
+		&::after {
+			content: '';
+			width: 2.6rem;
+			height: 2.6rem;
+			background-color: #fff;
+			border-radius: 5rem;
+			position: absolute;
+			top: 2px;
+			left: 2px;
+			transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.175);
+			box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.07);
+		}
+	}
+}
